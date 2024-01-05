@@ -1,0 +1,148 @@
+name: "prolificdreamer_sd_hyper_100k"
+tag: "${rmspace:${system.prompt_processor.prompt_library},_}"
+exp_root_dir: "outputs"
+seed: 0
+
+data_type: "multi-prompt-gaussian-random-camera-datamodule"
+data:
+  batch_size: [1, 1]
+  # 0-4999: 64x64, >=5000: 512x512
+  # this drastically reduces VRAM usage as empty space is pruned in early training
+  width: [256, 256]
+  height: [256, 256]
+  resolution_milestones: [40000]
+  camera_distance_range: [1.0, 1.5]
+  fovy_range: [40, 70]
+  elevation_range: [-10, 45]
+  camera_perturb: 0.
+  center_perturb: 0.
+  up_perturb: 0.
+  eval_camera_distance: 1.5
+  eval_fovy_deg: 70.
+  n_val_views: 30
+  # generation related
+  prompt_library: ${system.prompt_processor.prompt_library}
+  dim_gaussian: 1 # no need for hypernet
+
+system_type: "multi-prompt-radience-field-generator-system"
+system:
+  stage: "coarse"
+  initialize_shape: false # #true #
+  visualize_samples: false 
+  validation_via_video: true
+  use_aug: false #
+  train_guidance: true # required for training
+
+  geometry_type: "Hypernet-sdf"
+  geometry:
+    radius: 2.0 # nan for 1.0
+    normal_type: "finite_difference"
+    finite_difference_normal_eps: 0.01
+
+    sdf_bias: sphere
+    sdf_bias_params: 0.5
+    shape_init: sphere
+    shape_init_params: 0.5
+
+    hypernet_config: 
+      c_dim: 1024
+      out_dims: {
+          "sdf_weights": [64, 1],
+          "feature_weights": [64, 3],
+      }
+      spectral_norm: False
+      n_neurons: 64
+      n_hidden_layers: 1
+
+
+  material_type: no-material
+  material:
+    n_output_dims: 3
+    color_activation: sigmoid
+    requires_normal: true
+
+  background_type: "multi-prompt-neural-hashgrid-environment-map-background"
+  background:
+    color_activation: sigmoid
+    random_aug: true
+    random_aug_prob: 0.5
+    pos_encoding_config:
+      otype: HashGrid
+      n_levels: 16
+      n_features_per_level: 2
+      log2_hashmap_size: 19
+      base_resolution: 16
+      per_level_scale: 1.
+
+  renderer_type: "patch-renderer"
+  renderer:
+    base_renderer_type: generative-space-neus-volume-renderer
+    base_renderer:
+      radius: ${system.geometry.radius}
+      use_volsdf: true
+      trainable_variance: false # important!
+      learned_variance_init: 0.340119 # 0.340119 = log(30) / 10, 30 is the most common variance across the prompts
+
+      estimator: importance
+      num_samples_per_ray: 64
+      num_samples_per_ray_importance: 128
+      near_plane: 0.1
+      far_plane: 4.0
+      train_chunk_size: 0 #80000
+    patch_size: 128
+    global_downsample: 2 # 256 / 2 = 128
+
+  prompt_processor_type: "stable-diffusion-multi-prompt-processor"
+  prompt_processor:
+    pretrained_model_name_or_path: "pretrained/stable-diffusion-2-1-base"
+    prompt_library: ???
+    use_perp_neg: true
+
+  guidance_type: "stable-diffusion-vsd-guidance"
+  guidance:
+    pretrained_model_name_or_path: "pretrained/stable-diffusion-2-1-base"
+    pretrained_model_name_or_path_lora: "pretrained/stable-diffusion-2-1-base"
+    guidance_scale: 7.5
+    min_step_percent: 0.02
+    max_step_percent: [1, 0.98, 0.5, 100000] # annealed to 0.5 after 5000 steps
+  loggers:
+    wandb:
+      enable: false
+      project: "threestudio"
+      name: None
+
+  loss:
+    lambda_vsd: 1.
+    lambda_lora: 1.
+    lambda_orient: 0.
+    lambda_sparsity: [1, 200., 10., 10000] #100.
+    lambda_opaque: [80000, 0, 10., 80001] #[1, 0, 10., 90000] #0. #[10000, 0.0, 100.0, 10001]
+    lambda_z_variance: 0.
+    lambda_eikonal: [1, 100., 1., 10000]
+
+  optimizer:
+    name: AdamW
+    args:
+      betas: [0., 0.99]
+      eps: 1.e-8
+    params:
+      geometry:
+        lr: 0.002
+      background:
+        lr: 0.002
+      guidance:
+        lr: 0.0001
+
+
+trainer:
+  max_steps: 100000
+  log_every_n_steps: 1
+  num_sanity_val_steps: 0
+  val_check_interval: 10000
+  enable_progress_bar: true
+  precision: 32
+
+checkpoint:
+  save_last: true
+  save_top_k: -1
+  every_n_train_steps: ${trainer.val_check_interval}

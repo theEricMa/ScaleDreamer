@@ -8,7 +8,7 @@ It is the code base for Prompt-Amortized Text-to-3D Training Scripts, including
   - [ ] Classifier Score Distillation ([CSD](https://arxiv.org/pdf/2310.19415.pdf))
   - [ ] Asynchronous Score Distillation (ASD)
 - [ ] 3D Generator Architecture
-  - [ ] Hyper-iNGP, a reproduction of [ATT3D](https://arxiv.org/pdf/2306.07349.pdf)
+  - [ ] Hyper-iNGP from [ATT3D](https://arxiv.org/pdf/2306.07349.pdf)
   - [ ] 3DConv-net from [CC3D](https://arxiv.org/pdf/2303.12074.pdf)
   - [ ] Triplane-Transformer from [LRM](https://arxiv.org/abs/2311.04400)
 - [ ] 2D Diffusion Prior

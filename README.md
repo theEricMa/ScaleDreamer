@@ -5,7 +5,7 @@
 - **2024.06.23** Create this repo.
 
 ## ⚙️ Dependencies and Installation
-You must have an NVIDIA graphics card with at least [?]GB VRAM and have [CUDA](https://developer.nvidia.com/cuda-downloads) installed. Follow the [threestudio](https://github.com/threestudio-project/threestudio) instructions to set up your environment, or use the instructions below.
+Follow the [threestudio](https://github.com/threestudio-project/threestudio) instructions to set up your environment, or use our provided instructions as below.
 - Create a virtual environment:
 
 ```sh

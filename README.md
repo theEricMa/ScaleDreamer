@@ -32,7 +32,7 @@ pip install ninja
 ```sh
 pip install -r requirements.txt
 ```
-- Install iNGP dependencies (according to your default CUDA):
+- Install [iNGP](https://github.com/NVlabs/instant-ngp) dependencies (according to your default CUDA):
 
 ```sh
 export PATH="/usr/local/cuda/bin:$PATH"

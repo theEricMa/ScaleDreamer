@@ -7,7 +7,8 @@
 ## ⚙️ Dependencies and Installation
 
 <details>
-<summary> Follow the [threestudio](https://github.com/threestudio-project/threestudio) instructions to set up your environment, or use our provided instructions as below. (click to expand)</summary>
+<summary> Follow the [threestudio](https://github.com/threestudio-project/threestudio) to set up the conda environment, or use our provided instructions as below. </summary>
+ 
 - Create a virtual environment:
 
 ```sh
@@ -50,3 +51,13 @@ cd <your repo directory>
 ```
 </details>
 
+<details>
+<summary> Download 2D Diffusion Priors. </summary>
+ 
+- Download [SD-v2.1-base](https://huggingface.co/stabilityai/stable-diffusion-2-1-base) and [MVDream](https://mv-dream.github.io/) to the local directory `pretrained`.
+ 
+```
+python scripts/download_pretrained_models.py
+```
+
+<details>

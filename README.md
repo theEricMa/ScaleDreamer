@@ -35,7 +35,7 @@ pip install ninja
 ```sh
 pip install -r requirements.txt
 ```
-- Install [iNGP](https://github.com/NVlabs/instant-ngp) and [nerf-acc](https://github.com/nerfstudio-project/nerfacc):
+- Install [iNGP](https://github.com/NVlabs/instant-ngp) and [NerfAcc](https://github.com/nerfstudio-project/nerfacc):
 
 ```sh
 export PATH="/usr/local/cuda/bin:$PATH"
@@ -43,7 +43,7 @@ export LD_LIBRARY_PATH="/usr/local/cuda/lib64:$LD_LIBRARY_PATH"
 pip install git+https://github.com/NVlabs/tiny-cuda-nn/#subdirectory=bindings/torch
 pip install git+https://github.com/NVlabs/nvdiffrast.git
 ```
-If you encounter errors while installing iNGP, it is recommended to check your gcc version. Follow these instructions to change the gcc version within your conda environment. Then return to the repository directory to install iNGP again.
+If you encounter errors while installing iNGP, it is recommended to check your gcc version. Follow these instructions to change the gcc version within your conda environment. Then return to the repository directory to install iNGP and NerfAcc ⬆️ again.
  ```sh
 conda install -c conda-forge gxx=9.5.0
 cd  $CONDA_PREFIX/lib
@@ -55,7 +55,7 @@ cd <your repo directory>
 <details>
 <summary> Download 2D Diffusion Priors. </summary>
  
-- Download [SD-v2.1-base](https://huggingface.co/stabilityai/stable-diffusion-2-1-base) and [MVDream](https://mv-dream.github.io/) to the local directory `pretrained`.
+- Save [SD-v2.1-base](https://huggingface.co/stabilityai/stable-diffusion-2-1-base) and [MVDream](https://mv-dream.github.io/) to the local directory `pretrained`.
  
 ```
 python scripts/download_pretrained_models.py

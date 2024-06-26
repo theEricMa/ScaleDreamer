@@ -7,7 +7,7 @@
 ## ⚙️ Dependencies and Installation
 
 <details>
-<summary> Follow the [threestudio](https://github.com/threestudio-project/threestudio) to set up the conda environment, or use our provided instructions as below. </summary>
+<summary> Follow threestudio to set up the conda environment, or use our provided instructions as below. </summary>
  
 - Create a virtual environment:
 

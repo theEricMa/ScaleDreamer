@@ -1,11 +1,13 @@
 # ScaleDreamer: Scalable Text-to-3D Synthesis with Asynchronous Score Distillation
 
-### 📢 News
+## 🔥 News
 
 - **2024.06.23** Create this repo.
 
 ## ⚙️ Dependencies and Installation
-Follow the [threestudio](https://github.com/threestudio-project/threestudio) instructions to set up your environment, or use our provided instructions as below.
+
+<details>
+<summary> Follow the [threestudio](https://github.com/threestudio-project/threestudio) instructions to set up your environment, or use our provided instructions as below. (click to expand)</summary>
 - Create a virtual environment:
 
 ```sh
@@ -46,3 +48,5 @@ cd  $CONDA_PREFIX/lib
 ln -s  /usr/lib/x86_64-linux-gnu/libcuda.so ./
 cd <your repo directory>
 ```
+</details>
+

@@ -1,0 +1,1 @@
+You can put other plugins in this directory, as per threestudio.

@@ -59,5 +59,6 @@ cd <your repo directory>
 ```
 python scripts/download_pretrained_models.py
 ```
-
 <details>
+
+## 🌈 Prompt-Specific 3D Generation

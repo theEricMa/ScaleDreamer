@@ -35,12 +35,13 @@ pip install ninja
 ```sh
 pip install -r requirements.txt
 ```
-- Install [iNGP](https://github.com/NVlabs/instant-ngp) dependencies (according to your default CUDA):
+- Install [iNGP](https://github.com/NVlabs/instant-ngp) and [nerf-acc](https://github.com/nerfstudio-project/nerfacc):
 
 ```sh
 export PATH="/usr/local/cuda/bin:$PATH"
 export LD_LIBRARY_PATH="/usr/local/cuda/lib64:$LD_LIBRARY_PATH"
 pip install git+https://github.com/NVlabs/tiny-cuda-nn/#subdirectory=bindings/torch
+pip install git+https://github.com/NVlabs/nvdiffrast.git
 ```
 If you encounter errors while installing iNGP, it is recommended to check your gcc version. Follow these instructions to change the gcc version within your conda environment. Then return to the repository directory to install iNGP again.
  ```sh

@@ -102,5 +102,9 @@ sh scripts/multi-prompt-benchmark/asd_mv_triplane_transformer_DF415.sh
 ```
  
 ## 🚀 Prompt-Amortized 3D Generator Evaluation
+Create a directory to save the checkpoints
+```sh
+mkdir pretrained/3d_checkpoints
+```
 
 

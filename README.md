@@ -85,7 +85,9 @@ The following `3D generator` architectures are available:
 
 The following `corpus` datasets are available: [DF415](https://github.com/theEricMa/ScaleDreamer/blob/main/load/dreamfusion_415_prompt_library.json)
 
-The `3D generator` can be alternatively trained on the `dataset` with either `SD` or `MV` as the 2D Diffusion Prior.
+| Corpus | Description | File |
+| :-: | :-: | :-: |
+| DF415 | 415 text pormpts from [DreamFusion](https://dreamfusion3d.github.io/) project page | [json](https://github.com/theEricMa/ScaleDreamer/blob/main/load/dreamfusion_415_prompt_library.json)
 
 Run the following script to start training
 

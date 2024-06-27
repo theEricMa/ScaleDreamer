@@ -47,6 +47,7 @@ class MultipromptRandomCameraDataModuleConfig:
     light_sample_strategy: str = "dreamfusion"
     batch_uniform_azimuth: bool = True
     progressive_until: int = 0  # progressive ranges for elevation, azimuth, r, fovy
+    rays_d_normalize: bool = True
     # new config for generative model optimization
     dim_gaussian: int = 512
     prompt_library: str = "magic3d_prompt_library"
@@ -55,7 +56,8 @@ class MultipromptRandomCameraDataModuleConfig:
     eval_prompt: Optional[str] = None
     target_prompt: Optional[str] = None
     eval_fix_camera: Optional[int] = None # can be int, then fix the camera to the specified view
-    
+
+
 class MultipromptRandomCameraIterableDataset(RandomCameraIterableDataset):
     def __init__(self, cfg: Any, prompt_library: Dict) -> None:
         # just follow original initialization
@@ -161,7 +163,7 @@ class MultipromptRandomCameraDataset4FixPrompt(IterableDataset):
 
         return batch_dict
 
-@register("multi-prompt-random-camera-datamodule")
+@register("multiprompt-camera-datamodule")
 class RandomCameraDataModule(pl.LightningDataModule):
     cfg: MultipromptRandomCameraDataModuleConfig
     

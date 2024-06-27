@@ -87,7 +87,10 @@ The following `corpus` datasets are available: [DF415](https://github.com/theEri
 
 | Corpus | Description | File |
 | :-: | :-: | :-: |
+| MG15 | 15 text pormpts from [Magic3D](https://dreamfusion3d.github.io/) project page | [json](https://github.com/theEricMa/ScaleDreamer/blob/main/load/magic3d_15_prompt_library.json)
 | DF415 | 415 text pormpts from [DreamFusion](https://dreamfusion3d.github.io/) project page | [json](https://github.com/theEricMa/ScaleDreamer/blob/main/load/dreamfusion_415_prompt_library.json)
+| AT2520 | 2520 text pormpts from [ATT3D](https://research.nvidia.com/labs/toronto-ai/ATT3D) experiments | [json](https://github.com/theEricMa/ScaleDreamer/blob/main/load/att3d_2520_prompt_library.json)
+| DL17k | 17k text pormpts from [Instant3D](https://research.nvidia.com/labs/toronto-ai/ATT3D) release | [json](https://github.com/theEricMa/ScaleDreamer/blob/main/load/att3d_2520_prompt_library.json)
 
 Run the following script to start training
 

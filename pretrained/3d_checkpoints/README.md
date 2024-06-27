@@ -1,1 +1,0 @@
-Put the checkpoint of 3D generators here

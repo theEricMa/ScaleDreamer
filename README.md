@@ -91,6 +91,7 @@ The following `corpus` datasets are available: [DF415](https://github.com/theEri
 | DF415 | 415 text pormpts from [DreamFusion](https://dreamfusion3d.github.io/) project page | [json](https://github.com/theEricMa/ScaleDreamer/blob/main/load/dreamfusion_415_prompt_library.json)
 | AT2520 | 2520 text pormpts from [ATT3D](https://research.nvidia.com/labs/toronto-ai/ATT3D) experiments | [json](https://github.com/theEricMa/ScaleDreamer/blob/main/load/att3d_2520_prompt_library.json)
 | DL17k | 17k text pormpts from [Instant3D](https://research.nvidia.com/labs/toronto-ai/ATT3D) release | [json](https://github.com/theEricMa/ScaleDreamer/blob/main/load/att3d_2520_prompt_library.json)
+| CP100k | 110k text pormpts from [Cap3D](https://github.com/crockwell/Cap3D) dataset | [json](https://github.com/theEricMa/ScaleDreamer/blob/main/load/cap3d_100k_prompt_library.json)
 
 Run the following script to start training
 
@@ -99,9 +100,7 @@ Run the following script to start training
 ```sh
 sh scripts/multi-prompt-benchmark/asd_mv_triplane_transformer_DF415.sh
 ```
-
-</details>
-
  
-  
+## 🚀 Prompt-Amortized 3D Generator Evaluation
+
 

@@ -64,12 +64,21 @@ python scripts/download_pretrained_models.py
 
 ## 🌈 Prompt-Specific 3D Generation
 
-- ASD with Stable Diffusion. You can change the prompt accordingly.
+- ASD with Stable Diffusion (`SD`). You can change the prompt accordingly.
 ```
 sh scripts/single-prompt-benchmark/asd_sd_nerf.sh
 ```
 
-- ASD with MVDream. You can change the prompt accordingly.
+- ASD with MVDream (`MV`). You can change the prompt accordingly.
 ```
 sh scripts/single-prompt-benchmark/asd_mv_nerf.sh
 ```
+
+## 🌈 Prompt-Amortized 3D Generator Tranining
+
+- The following `3D generator` architectures are available: Triplane-Transformer
+
+- The following text prompt `dataset` is available: DF415
+ 
+- The `3D generator` can be alternatively trained on the `dataset` with either `SD` or `MV` as the 2D Diffusion Prior.
+

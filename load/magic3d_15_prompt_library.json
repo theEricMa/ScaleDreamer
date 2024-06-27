@@ -1,0 +1,54 @@
+{
+    "train": [
+      "A beautiful dress made out of garbage bags, on a mannequin. Studio lighting, high quality, high resolution.",
+      "A blue poison-dart frog sitting on a water lily.",
+      "A DSLR photo of a car made out of sushi.",
+      "A DSLR photo of a bagel filled with cream cheese and lox.",
+      "A DSLR photo of an ice cream sundae.",
+      "A DSLR photo of a peacock on a surfboard.",
+      "A DSLR photo of a plate piled high with chocolate chip cookies.",
+      "A DSLR photo of Neuschwanstein Castle, aerial view.",
+      "A DSLR photo of the Imperial State Crown of England.",
+      "A DSLR photo of the leaning tower of Pisa, aerial view.",
+      "A ripe strawberry.",
+      "A silver platter piled high with fruits.",
+      "A DSLR photo of a silver candelabra sitting on a red velvet tablecloth, only one candle is lit.",
+      "A DSLR photo of Sydney opera house, aerial view.",
+      "Michelangelo style statue of an astronaut."
+    ],
+    "val": [
+      "A beautiful dress made out of garbage bags, on a mannequin. Studio lighting, high quality, high resolution.",
+      "A blue poison-dart frog sitting on a water lily.",
+      "A DSLR photo of a car made out of sushi.",
+      "A DSLR photo of a bagel filled with cream cheese and lox.",
+      "A DSLR photo of an ice cream sundae.",
+      "A DSLR photo of a peacock on a surfboard.",
+      "A DSLR photo of a plate piled high with chocolate chip cookies.",
+      "A DSLR photo of Neuschwanstein Castle, aerial view.",
+      "A DSLR photo of the Imperial State Crown of England.",
+      "A DSLR photo of the leaning tower of Pisa, aerial view.",
+      "A ripe strawberry.",
+      "A silver platter piled high with fruits.",
+      "A DSLR photo of a silver candelabra sitting on a red velvet tablecloth, only one candle is lit.",
+      "A DSLR photo of Sydney opera house, aerial view.",
+      "Michelangelo style statue of an astronaut."
+    ],
+    "test": [
+      "A beautiful dress made out of garbage bags, on a mannequin. Studio lighting, high quality, high resolution.",
+      "A blue poison-dart frog sitting on a water lily.",
+      "A DSLR photo of a car made out of sushi.",
+      "A DSLR photo of a bagel filled with cream cheese and lox.",
+      "A DSLR photo of an ice cream sundae.",
+      "A DSLR photo of a peacock on a surfboard.",
+      "A DSLR photo of a plate piled high with chocolate chip cookies.",
+      "A DSLR photo of Neuschwanstein Castle, aerial view.",
+      "A DSLR photo of the Imperial State Crown of England.",
+      "A DSLR photo of the leaning tower of Pisa, aerial view.",
+      "A ripe strawberry.",
+      "A silver platter piled high with fruits.",
+      "A DSLR photo of a silver candelabra sitting on a red velvet tablecloth, only one candle is lit.",
+      "A DSLR photo of Sydney opera house, aerial view.",
+      "Michelangelo style statue of an astronaut."
+    ]
+  }
+  

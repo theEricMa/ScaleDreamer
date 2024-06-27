@@ -95,10 +95,10 @@ The following `corpus` datasets are available: [DF415](https://github.com/theEri
 
 Run the following script to start training
 
-- `Triplane-Transformer` with `MV` on `DF415`
+- `3DConv-net` with `SD` on `DF415`
  
 ```sh
-sh scripts/multi-prompt-benchmark/asd_mv_triplane_transformer_DF415.sh
+sh scripts/multi-prompt-benchmark/asd_sd_3dconv_net_DF415.sh
 ```
  
 ## 🚀 Prompt-Amortized 3D Generator Evaluation

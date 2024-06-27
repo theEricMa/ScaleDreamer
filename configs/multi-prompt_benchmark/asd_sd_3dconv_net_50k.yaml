@@ -101,7 +101,7 @@ system:
     lambda_sparsity: 20
     lambda_opaque: [40000, 0, 10., 50000] # final 1/5 iterations
     lambda_z_variance: 0.
-    lambda_eikonal: [1, 100., 1., 5000] # final 1/1 iterations
+    lambda_eikonal: [1, 100., 1., 5000] # first 1/10 iterations
 
   optimizer:
     name: Adam

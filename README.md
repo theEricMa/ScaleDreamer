@@ -74,7 +74,7 @@ sh scripts/single-prompt-benchmark/asd_sd_nerf.sh
 sh scripts/single-prompt-benchmark/asd_mv_nerf.sh
 ```
 
-## 🌈 Prompt-Amortized 3D Generator Tranining
+## 🕹️ Prompt-Amortized 3D Generator Tranining
 
 - The following `3D generator` architectures are available: [Triplane-Transformer](https://github.com/theEricMa/ScaleDreamer/blob/main/custom/amortized/models/geometry/triplane_transformer.py)
 
@@ -82,8 +82,9 @@ sh scripts/single-prompt-benchmark/asd_mv_nerf.sh
  
 - The `3D generator` can be alternatively trained on the `dataset` with either `SD` or `MV` as the 2D Diffusion Prior.
 
-<details>
-<summary> Run the following script to start training </summary>
+Run the following script to start training
+
+- `Triplane-Transformer` with `MV` on `DF415`
  
 ```sh
 sh scripts/multi-prompt-benchmark/asd_mv_triplane_transformer_DF415.sh

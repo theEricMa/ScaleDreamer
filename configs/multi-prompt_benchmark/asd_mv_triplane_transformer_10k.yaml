@@ -1,4 +1,4 @@
-name: "mse_mv_triplane_transformer_10k"
+name: "asd_mv_triplane_100k"
 tag: "${rmspace:${system.prompt_processor.prompt_library},_}"
 exp_root_dir: "outputs"
 seed: 0
@@ -49,7 +49,6 @@ system:
       num_layers: 12
       num_heads: 16
       mlp_ratio: 4
-      flash_attention: false
       local_text: true
 
   material_type: no-material
@@ -63,7 +62,7 @@ system:
     color_activation: sigmoid-mipnerf # follow OpenLRM
     random_aug: false
 
-  renderer_type: generative-space-volsdf-volume-renderer
+  renderer_type: "generative-space-volsdf-volume-renderer"
   renderer:
     radius: ${system.geometry.radius}
     use_volsdf: true
@@ -84,16 +83,15 @@ system:
     prompt_library: ???
     negative_prompt: "ugly, bad anatomy, blurry, pixelated obscure, unnatural colors, poor lighting, dull, and unclear, cropped, lowres, low quality, artifacts, duplicate, morbid, mutilated, poorly drawn face, deformed, dehydrated, bad proportions"
 
-  guidance_type: "mvdream-multiview-diffusion-guidance"
+  guidance_type: "mvdream-asynchronous-score-distillation-guidance"
   guidance:
     model_name: "sd-v2.1-base-4view"
     ckpt_path: "pretrained/sd-v2.1-base-4view.pt" # path to a pre-downloaded checkpoint file (null for loading from URL)
-    guidance_scale: 50.0
-    min_step_percent: [0, 0.5, 0.02, 50000] # follow MVDream
-    max_step_percent: [0, 0.98, 0.5, 50000] # same as vsd
-    recon_loss: true
-    recon_std_rescale: 0.5
-
+    guidance_scale: 7.5
+    plus_ratio: 0.1
+    plus_random: true
+    min_step_percent: [0, 0.5, 0.02, 100000] # follow MVDream
+    max_step_percent: [0, 0.98, 0.5, 100000] # same as vsd
   loggers:
     wandb:
       enable: false
@@ -101,12 +99,12 @@ system:
       name: None
 
   loss:
-    lambda_sds: 1.
+    lambda_asd: 1.
     lambda_orient: 0.
     lambda_sparsity: 20
-    lambda_opaque: [40000, 0, 1., 50000] # final 1/5 iterations
+    lambda_opaque: [80000, 0, 1., 100000] # final 1/5 iterations
     lambda_z_variance: 0.
-    lambda_eikonal: 0.1 #[1, 10., 1., 10000] # fisrt 1/10 iterations
+    lambda_eikonal: 0.01 #[1, 10., 1., 10000] # fisrt 1/10 iterations
 
   optimizer:
     name: Adan # for fast convergence
@@ -121,7 +119,7 @@ system:
 
 
 trainer:
-  max_steps: 50000
+  max_steps: 100000
   log_every_n_steps: 1
   num_sanity_val_steps: 0
   val_check_interval: 20000

@@ -64,12 +64,41 @@ python scripts/download_pretrained_models.py
 
 ## 🌈 Prompt-Specific 3D Generation
 
-- ASD with Stable Diffusion. You can change the prompt accordingly.
+- ASD with Stable Diffusion (`SD`). You can change the prompt accordingly.
 ```
 sh scripts/single-prompt-benchmark/asd_sd_nerf.sh
 ```
 
-- ASD with MVDream. You can change the prompt accordingly.
+- ASD with MVDream (`MV`). You can change the prompt accordingly.
 ```
 sh scripts/single-prompt-benchmark/asd_mv_nerf.sh
 ```
+
+## 🕹️ Prompt-Amortized 3D Generator Tranining
+
+The following `3D generator` architectures are available: 
+
+| Network | Description | File |
+| :-: | :-: | :-: |
+| Triplane-Transformer | Transformer-based 3D Generator, with [Triplane](https://github.com/NVlabs/eg3d) as the output structure, adopted from [LRM](https://yiconghong.me/LRM/) | [geometry](https://github.com/theEricMa/ScaleDreamer/blob/main/custom/amortized/models/geometry/triplane_transformer.py), [architecture](https://github.com/theEricMa/ScaleDreamer/blob/main/custom/amortized/extern/triplane_transformer_modules.py)
+
+
+The following `corpus` datasets are available: [DF415](https://github.com/theEricMa/ScaleDreamer/blob/main/load/dreamfusion_415_prompt_library.json)
+
+| Corpus | Description | File |
+| :-: | :-: | :-: |
+| DF415 | 415 text pormpts from [DreamFusion](https://dreamfusion3d.github.io/) project page | [json](https://github.com/theEricMa/ScaleDreamer/blob/main/load/dreamfusion_415_prompt_library.json)
+
+Run the following script to start training
+
+- `Triplane-Transformer` with `MV` on `DF415`
+ 
+```sh
+sh scripts/multi-prompt-benchmark/asd_mv_triplane_transformer_DF415.sh
+```
+
+</details>
+
+ 
+  
+

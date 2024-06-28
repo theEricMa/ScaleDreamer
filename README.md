@@ -81,6 +81,7 @@ The following `3D generator` architectures are available:
 | Network | Description | File |
 | :-: | :-: | :-: |
 | Hyper-iNGP | iNGP with text-conditioned linear layers,adopted from [ATT3D](https://research.nvidia.com/labs/toronto-ai/ATT3D/) | [geometry](https://github.com/theEricMa/ScaleDreamer/blob/main/custom/amortized/models/geometry/hyper_iNGP.py), [background](https://github.com/theEricMa/ScaleDreamer/blob/main/custom/amortized/extern/triplane_transformer_modules.py)
+| 3DConv-net | A StyleGAN generator that outputs voxels with 3D convolution, code adopted from [CC3D](https://github.com/sherwinbahmani/cc3d/blob/master/training/networks_3d.py) | [geometry](https://github.com/theEricMa/ScaleDreamer/blob/main/custom/amortized/models/geometry/stylegan_3dconv_net.py), [architecture](https://github.com/theEricMa/ScaleDreamer/blob/main/custom/amortized/extern/stylegan_3dconv_modules.py)
 | Triplane-Transformer | Transformer-based 3D Generator, with [Triplane](https://github.com/NVlabs/eg3d) as the output structure, adopted from [LRM](https://yiconghong.me/LRM/) | [geometry](https://github.com/theEricMa/ScaleDreamer/blob/main/custom/amortized/models/geometry/triplane_transformer.py), [architecture](https://github.com/theEricMa/ScaleDreamer/blob/main/custom/amortized/models/background/multiprompt_neural_environment_hashgrid_map_background.py)
 
 

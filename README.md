@@ -64,12 +64,12 @@ python scripts/download_pretrained_models.py
 
 ## 🌈 Prompt-Specific 3D Generation
 
-- ASD with `SD` (Stable Diffusion ). You can change the prompt accordingly.
+- ASD with `SD` (Stable Diffusion). Feel free to change the prompt accordingly.
 ```
 sh scripts/single-prompt-benchmark/asd_sd_nerf.sh
 ```
 
-- ASD with `MV` (MVDream). You can change the prompt accordingly.
+- ASD with `MV` (MVDream). Feel free to change the prompt accordingly.
 ```
 sh scripts/single-prompt-benchmark/asd_mv_nerf.sh
 ```

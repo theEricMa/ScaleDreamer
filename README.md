@@ -183,7 +183,7 @@ python evaluation/CLIP/evaluation_amortized.py --result_dir <video_dir>
 
 ## 🙏 Acknowledgement
 
-- [threestudio](https://github.com/threestudio-project/threestudio), a clean and extendable code base for text-to-3D
+- [threestudio](https://github.com/threestudio-project/threestudio), a clean and extensible codebase for text-to-3D
 - [MVDream-threestudio](https://github.com/bytedance/MVDream-threestudio), the implementation of MVDream for text-to-3D
 
 

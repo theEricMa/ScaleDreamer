@@ -134,4 +134,8 @@ Create a directory to save the checkpoints
 mkdir pretrained/3d_checkpoints
 ```
 
+The checkpoints of the ⬆️ experiments are available. Save the corresponding `.pth` file to `3d_checkpoint`, then run the scripts as below.
+
+
+
 

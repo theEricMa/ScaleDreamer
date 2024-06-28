@@ -74,7 +74,7 @@ sh scripts/single-prompt-benchmark/asd_sd_nerf.sh
 sh scripts/single-prompt-benchmark/asd_mv_nerf.sh
 ```
 
-## 🕹️ Prompt-Amortized 3D Generator Tranining
+## 🚀 Prompt-Amortized 3D Generator Tranining
 
 The following `3D generator` architectures are available: 
 
@@ -128,7 +128,7 @@ sh scripts/multi-prompt-benchmark/asd_mv_triplane_transformer_DL17k.sh
 scripts/multi-prompt-benchmark/asd_sd_3dconv_net_CP100k.sh
 ```
 
-## 🚀 Prompt-Amortized 3D Generator Evaluation
+## 📷 Prompt-Amortized 3D Generator Evaluation
 Create a directory to save the checkpoints
 ```sh
 mkdir pretrained/3d_checkpoints
@@ -172,5 +172,18 @@ The rendered images and videos are saved in `outputs/<experiment_name>/save/<num
 ```
 python evaluation/CLIP/evaluation_amortized.py --result_dir <video_dir>
 ```
+
+## 🕹️ Create Your Own Modules
+
+### 2D Diffusion Guidance
+
+### 3D Generator
+
+### Text corpus
+
+## 🙏 Acknowledgement
+
+- [threestudio](https://github.com/threestudio-project/threestudio), a clean and extendable code base for text-to-3D
+- [MVDream-threestudio](https://github.com/bytedance/MVDream-threestudio), the implementation of MVDream for text-to-3D
 
 

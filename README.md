@@ -167,7 +167,7 @@ sh scripts/multi_prompts_benchmark_evaluation/asd_mv_triplane_transformer_DL17k.
 sh scripts/multi_prompts_benchmark_evaluation/asd_sd_3dconv_net_CP100k.sh
 ```
 
-The rendered images and videos are saved in `outputs/<experiment_name>/save/<num_iter>` directory. Compute the metric with CLIP via
+The rendered images and videos are saved in `outputs/<experiment_name>/save/<num_iter>` directory. Compute the metrics with CLIP via
 
 ```
 python evaluation/CLIP/evaluation_amortized.py --result_dir <video_dir>

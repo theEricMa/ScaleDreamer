@@ -1,4 +1,4 @@
-name: "asd_sd_3dconv_net_100k"
+name: "asd_sd_hyper_iNGP_50k"
 tag: "${rmspace:${system.prompt_processor.prompt_library},_}"
 exp_root_dir: "outputs"
 seed: 0
@@ -14,12 +14,12 @@ data:
   camera_perturb: 0.
   center_perturb: 0.
   up_perturb: 0.
-  eval_camera_distance: 1.2
+  eval_camera_distance: 1.5
   eval_fovy_deg: 70.
   n_val_views: 30
   # generation related
   prompt_library: ${system.prompt_processor.prompt_library}
-  dim_gaussian: ${system.geometry.space_generator_config.z_dim}
+  dim_gaussian: 0 # not used for Hyper-iNGP
 
 system_type: "multiprompt-radience-field-generator-system"
 system:
@@ -28,24 +28,26 @@ system:
   visualize_samples: false 
   validation_via_video: true
 
-  geometry_type: "3DConv-net"
+  geometry_type: "Hyper-iNGP"
   geometry:
-    radius: 2.0 # not good to converge in 1.0
+    radius: 2.0 # nan for 1.0
     normal_type: "finite_difference"
     finite_difference_normal_eps: 0.01
-    activation: "none"
 
     sdf_bias: sphere
-    sdf_bias_params: 0.8 # other methods except tssd may not converge for 0.5
+    sdf_bias_params: 0.5
+    shape_init: sphere
+    shape_init_params: 0.5
 
-    space_generator_config: 
-      z_dim: 64
-      w_dim: 256
+    hypernet_config: 
       c_dim: 1024
-      num_layers: 2
-      img_resolution: 128 # the resolution of tri-plane, bigger or smaller?
-      img_channels: 32 # for tri-plane
-      channel_multiplier: 1
+      out_dims: {
+          "sdf_weights": [64, 1],
+          "feature_weights": [64, 3],
+      }
+      spectral_norm: False
+      n_neurons: 64
+      n_hidden_layers: 1
   
   material_type: no-material
   material:
@@ -53,10 +55,18 @@ system:
     color_activation: sigmoid
     requires_normal: true
 
-  background_type: "neural-environment-map-background"
+  background_type: "multiprompt-neural-hashgrid-environment-map-background"
   background:
     color_activation: sigmoid
     random_aug: true
+    random_aug_prob: 0.2
+    pos_encoding_config:
+      otype: HashGrid
+      n_levels: 16
+      n_features_per_level: 2
+      log2_hashmap_size: 19
+      base_resolution: 16
+      per_level_scale: 1.
 
   renderer_type: "generative-space-volsdf-volume-renderer"
   renderer:
@@ -86,8 +96,8 @@ system:
     guidance_scale: 7.5
     plus_ratio: 0.1
     plus_random: true
-    min_step_percent: [0, 0.5, 0.02, 100000] # follow MVDream
-    max_step_percent: [0, 0.98, 0.5, 100000] # same as vsd
+    min_step_percent: [0, 0.5, 0.02, 50000] # follow MVDream
+    max_step_percent: [0, 0.98, 0.5, 50000] # same as vsd
     guidance_perp_neg: -0.5
   loggers:
     wandb:
@@ -99,9 +109,9 @@ system:
     lambda_asd: 1.
     lambda_orient: 0.
     lambda_sparsity: 20
-    lambda_opaque: [80000, 0, 10., 100000] # final 1/5 iterations
+    lambda_opaque: [40000, 0, 10., 50000] # final 1/5 iterations
     lambda_z_variance: 0.
-    lambda_eikonal: [1, 100., 1., 10000] # first 1/10 iterations
+    lambda_eikonal: [1, 100., 1., 5000] # first 1/10 iterations
 
   optimizer:
     name: Adam
@@ -115,10 +125,10 @@ system:
         lr: 0.001
 
 trainer:
-  max_steps: 100000
+  max_steps: 50000
   log_every_n_steps: 1
   num_sanity_val_steps: 0
-  val_check_interval: 10000
+  val_check_interval: 5000
   enable_progress_bar: true
   precision: 32
 

@@ -1,4 +1,4 @@
-name: "asd_sd_3dconv_net_100k"
+name: "asd_sd_3dconv_net_500k"
 tag: "${rmspace:${system.prompt_processor.prompt_library},_}"
 exp_root_dir: "outputs"
 seed: 0
@@ -14,7 +14,7 @@ data:
   camera_perturb: 0.
   center_perturb: 0.
   up_perturb: 0.
-  eval_camera_distance: 1.2
+  eval_camera_distance: 1.5
   eval_fovy_deg: 70.
   n_val_views: 30
   # generation related
@@ -45,7 +45,7 @@ system:
       num_layers: 2
       img_resolution: 128 # the resolution of tri-plane, bigger or smaller?
       img_channels: 32 # for tri-plane
-      channel_multiplier: 1
+      channel_multiplier: 2
   
   material_type: no-material
   material:
@@ -86,8 +86,8 @@ system:
     guidance_scale: 7.5
     plus_ratio: 0.1
     plus_random: true
-    min_step_percent: [0, 0.5, 0.02, 100000] # follow MVDream
-    max_step_percent: [0, 0.98, 0.5, 100000] # same as vsd
+    min_step_percent: [1, 0.5, 0.02, 500000] # for fair comparison with ours
+    max_step_percent: [1, 0.98, 0.5, 500000] # annealed to 0.5 after 5000 steps
     guidance_perp_neg: -0.5
   loggers:
     wandb:
@@ -99,26 +99,27 @@ system:
     lambda_asd: 1.
     lambda_orient: 0.
     lambda_sparsity: 20
-    lambda_opaque: [80000, 0, 10., 100000] # final 1/5 iterations
+    lambda_opaque: [400000, 0, 10., 400001] # final 1/5 iterations
     lambda_z_variance: 0.
-    lambda_eikonal: [1, 100., 1., 10000] # first 1/10 iterations
+    lambda_eikonal: [1, 100., 1., 50000] # fisrt 1/10 iterations
 
   optimizer:
-    name: Adam
+    name: Adan # for fast convergence
     args:
-      betas: [0., 0.99]
-      eps: 1.e-8
+      betas: [0.98, 0.92, 0.99]
+      eps: 1.e-15
     params:
       geometry:
         lr: 0.004
       background:
         lr: 0.001
 
+
 trainer:
-  max_steps: 100000
+  max_steps: 500000
   log_every_n_steps: 1
   num_sanity_val_steps: 0
-  val_check_interval: 10000
+  val_check_interval: 50000
   enable_progress_bar: true
   precision: 32
 

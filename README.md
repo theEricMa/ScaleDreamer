@@ -1,5 +1,7 @@
 # ScaleDreamer: Scalable Text-to-3D Synthesis with Asynchronous Score Distillation
 
+Paper | [Project Page](https://theericma.github.io/ScaleDreamer/) 
+
 ## 🔥 News
 
 - **2024.06.23** Create this repo.

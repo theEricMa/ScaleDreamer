@@ -64,12 +64,12 @@ python scripts/download_pretrained_models.py
 
 ## 🌈 Prompt-Specific 3D Generation
 
-- ASD with Stable Diffusion (`SD`). You can change the prompt accordingly.
+- ASD with `SD` (Stable Diffusion ). You can change the prompt accordingly.
 ```
 sh scripts/single-prompt-benchmark/asd_sd_nerf.sh
 ```
 
-- ASD with MVDream (`MV`). You can change the prompt accordingly.
+- ASD with `MV` (MVDream). You can change the prompt accordingly.
 ```
 sh scripts/single-prompt-benchmark/asd_mv_nerf.sh
 ```
@@ -80,7 +80,8 @@ The following `3D generator` architectures are available:
 
 | Network | Description | File |
 | :-: | :-: | :-: |
-| Triplane-Transformer | Transformer-based 3D Generator, with [Triplane](https://github.com/NVlabs/eg3d) as the output structure, adopted from [LRM](https://yiconghong.me/LRM/) | [geometry](https://github.com/theEricMa/ScaleDreamer/blob/main/custom/amortized/models/geometry/triplane_transformer.py), [architecture](https://github.com/theEricMa/ScaleDreamer/blob/main/custom/amortized/extern/triplane_transformer_modules.py)
+| Hyper-iNGP | iNGP with text-conditioned linear layers,adopted from [ATT3D](https://research.nvidia.com/labs/toronto-ai/ATT3D/) | [geometry](https://github.com/theEricMa/ScaleDreamer/blob/main/custom/amortized/models/geometry/hyper_iNGP.py), [background](https://github.com/theEricMa/ScaleDreamer/blob/main/custom/amortized/extern/triplane_transformer_modules.py)
+| Triplane-Transformer | Transformer-based 3D Generator, with [Triplane](https://github.com/NVlabs/eg3d) as the output structure, adopted from [LRM](https://yiconghong.me/LRM/) | [geometry](https://github.com/theEricMa/ScaleDreamer/blob/main/custom/amortized/models/geometry/triplane_transformer.py), [architecture](https://github.com/theEricMa/ScaleDreamer/blob/main/custom/amortized/models/background/multiprompt_neural_environment_hashgrid_map_background.py)
 
 
 The following `corpus` datasets are available: [DF415](https://github.com/theEricMa/ScaleDreamer/blob/main/load/dreamfusion_415_prompt_library.json)

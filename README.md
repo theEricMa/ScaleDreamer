@@ -195,6 +195,8 @@ python evaluation/CLIP/evaluation_amortized.py --result_dir <video_dir>
 1. Create a JSON file that lists the training, validation, and test text prompts in the `load` directory 
 2. Enter the name of this JSON file into the `system.prompt_processor.prompt_library` argument to set up the corpus, take other commands in the `scripts` directory for reference
 
+You can also add your modules for `data`, `renderer`, `prompt_processor`, etc.
+
 ## 🙏 Acknowledgement
 
 - [threestudio](https://github.com/threestudio-project/threestudio), a clean and extensible codebase for text-to-3D

@@ -177,15 +177,23 @@ python evaluation/CLIP/evaluation_amortized.py --result_dir <video_dir>
 
 ## 🕹️ Create Your Own Modules
 
+### 3D Generator
+
+1. Place the code in `custom/amortized/models/geometry`, check out the other code in that directory for reference.
+2. Update your <name_of_file> in `custom/amortized/models/geometry/__init__.py`
+3. Create your own config file,
+   
 ### 2D Diffusion Guidance
 
+1. Put your code in `threestudio/models/guidance`, take a look at the other code in that directory or other [guidance](https://github.com/threestudio-project/threestudio/tree/main/threestudio/models/guidance) for reference.
+2. Update your <name_of_file> in  `threestudio/models/guidance/__init__.py`
 
-### 3D Generator
+
 
 ### Text corpus
 
 1. Create a JSON file that lists the training, validation, and test text prompts in the `load` directory 
-2. Enter the name of this JSON file into the `system.prompt_processor.prompt_library` argument to set up the corpus.
+2. Enter the name of this JSON file into the `system.prompt_processor.prompt_library` argument to set up the corpus, take other commands in the `scripts` directory for reference
 
 ## 🙏 Acknowledgement
 

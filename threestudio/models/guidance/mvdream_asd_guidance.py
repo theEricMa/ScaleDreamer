@@ -142,18 +142,25 @@ class MVDreamTimestepShiftedScoreDistillationGuidance(BaseObject):
         self, 
         t: Float[Tensor, "B"]
     ):
-
+        assert self.cfg.plus_ratio >= 0.
+        # random timestamp for qt
         t_plus = self.cfg.plus_ratio * (t - self.min_step)
+        t_plus = t_plus.clamp(
+            torch.zeros_like(t),
+            self.num_train_timesteps - t -1 
+        )
         if self.cfg.plus_random:
-            t_plus = (t_plus * torch.rand(*t.shape,device = self.device)).to(torch.long)
+            t_plus = (t_plus * torch.rand(*t.shape,device = self.device))
         else:
-            t_plus = t_plus.to(torch.long)
-        t_plus = t + t_plus
+            t_plus = t_plus
+
+        t_plus = t + t_plus.to(torch.long)
         t_plus = torch.clamp(
             t_plus,
-            1, # T_min
-            self.num_train_timesteps - 1, # T_max
+            1, # T_min = 1
+            max = self.num_train_timesteps - 1, # T_max = 999
         )
+
         return t_plus
 
 

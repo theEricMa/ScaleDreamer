@@ -181,13 +181,13 @@ python evaluation/CLIP/evaluation_amortized.py --result_dir <video_dir>
 
 1. Place the code in `custom/amortized/models/geometry`, check out the other code in that directory for reference.
 2. Update your <name_of_file> in `custom/amortized/models/geometry/__init__.py`
-3. Create your own config file, type in your registered module name in the `system.geometry_type` argument, check out the other code in `configs/multi-prompt_benchmark` directory for reference.
+3. Create your own config file, type in your registered module name in the `system.geometry_type` argument, check out the other code in the `configs/multi-prompt_benchmark` directory for reference.
    
 ### 2D Diffusion Guidance
 
 1. Put your code in `threestudio/models/guidance`, take a look at the other code in that directory or other [guidance](https://github.com/threestudio-project/threestudio/tree/main/threestudio/models/guidance) for reference.
 2. Update your <name_of_file> in  `threestudio/models/guidance/__init__.py`
-
+3. Create your own config file, type in your registered module name in the `system.guidance_type` argument, take a look at the other code in the `configs/multi-prompt_benchmark` directory for reference.
 
 
 ### Text corpus

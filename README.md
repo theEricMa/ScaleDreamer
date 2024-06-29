@@ -138,32 +138,32 @@ mkdir pretrained/3d_checkpoints
 
 The checkpoints of the ⬆️ experiments are available. Save the corresponding `.pth` file to `3d_checkpoint`, then run the scripts as below.
 
-- `Hyper-iNGP` with `SD` on `MG15`. The ckpt in Google Drive
+- `Hyper-iNGP` with `SD` on `MG15`. The ckpt in [Google Drive](https://drive.google.com/file/d/1gjj1QEeu4OR3VATw7g7-zFIJpmg2A5kR/view?usp=sharing)
 
 ```sh
 sh scripts/multi_prompts_benchmark_evaluation/asd_sd_hyper_iNGP_MG15.sh
 ```
 
-- `3DConv-net` with `SD` on `DF415`. The ckpt in Google Drive
+- `3DConv-net` with `SD` on `DF415`. The ckpt in [Google Drive](https://drive.google.com/file/d/1elAPZlYNRRaA4jH9eb5xCJH5VrgofzbJ/view?usp=sharing)
  
 ```sh
 sh scripts/multi_prompts_benchmark_evaluation/asd_sd_3dconv_net_DF415.sh
 ```
 
-- `3DConv-net` with `SD` on `AT2520`. The ckpt in Google Drive
+- `3DConv-net` with `SD` on `AT2520`. The ckpt in [Google Drive](https://drive.google.com/file/d/1hJcdWqr6aB6D5J2ixioRZPsyJn5dmiVp/view?usp=sharing)
 
 ```sh
 sh scripts/multi_prompts_benchmark_evaluation/asd_sd_3dconv_net_AT2520.sh
 ```
 
 
-- `Triplane-Transformer` with `MV` on `DL17k`. The ckpt in Google Drive
+- `Triplane-Transformer` with `MV` on `DL17k`. The ckpt in [Google Drive](https://drive.google.com/file/d/155N80gHsbXTdsRVAc07lGrbzlHpdNMns/view?usp=sharing)
 
 ```sh
 sh scripts/multi_prompts_benchmark_evaluation/asd_mv_triplane_transformer_DL17k.sh
 ```
 
-- `3DConv-net` with `SD` on `CP100k`. The ckpt in Google Drive
+- `3DConv-net` with `SD` on `CP100k`. The ckpt in [Google Drive](https://drive.google.com/file/d/1SGPS6jWFmC9FahdlIk3SZOn2t0JPHHNE/view?usp=sharing)
 
 ```sh
 sh scripts/multi_prompts_benchmark_evaluation/asd_sd_3dconv_net_CP100k.sh

@@ -199,7 +199,9 @@ You can also add your modules for `data`, `renderer`, `prompt_processor`, etc.
 
 ## 🙏 Acknowledgement
 
-- [threestudio](https://github.com/threestudio-project/threestudio), a clean and extensible codebase for text-to-3D
-- [MVDream-threestudio](https://github.com/bytedance/MVDream-threestudio), the implementation of MVDream for text-to-3D
+- [threestudio](https://github.com/threestudio-project/threestudio), a clean and extensible codebase for text-to-3D.
+- [MVDream-threestudio](https://github.com/bytedance/MVDream-threestudio), the implementation of MVDream for text-to-3D.
+- [OpenLRM](https://github.com/3DTopia/OpenLRM), the implementation of [LRM](https://yiconghong.me/LRM/). We develop the 3D generator of Triplane-Transformer on top of it.
+- [Cap3D](https://cap3d-um.github.io/), provides the text caption of [Objaverse](https://objaverse.allenai.org/). We develop the corpus of CP100k on top of it.
 
 

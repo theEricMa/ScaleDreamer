@@ -1,6 +1,6 @@
 # ScaleDreamer: Scalable Text-to-3D Synthesis with Asynchronous Score Distillation
 
-Paper | [Project Page](https://theericma.github.io/ScaleDreamer/) 
+Paper | [Project Page](https://sites.google.com/view/scaledreamer-release/)
 
 ## 🔥 News
 
@@ -87,7 +87,7 @@ The following `3D generator` architectures are available:
 | Triplane-Transformer | Transformer-based 3D Generator, with [Triplane](https://github.com/NVlabs/eg3d) as the output structure, adopted from [LRM](https://yiconghong.me/LRM/) | [geometry](https://github.com/theEricMa/ScaleDreamer/blob/main/custom/amortized/models/geometry/triplane_transformer.py), [architecture](https://github.com/theEricMa/ScaleDreamer/blob/main/custom/amortized/models/background/multiprompt_neural_environment_hashgrid_map_background.py)
 
 
-The following `corpus` datasets are available: [DF415](https://github.com/theEricMa/ScaleDreamer/blob/main/load/dreamfusion_415_prompt_library.json)
+The following `corpus` datasets are available: 
 
 | Corpus | Description | File |
 | :-: | :-: | :-: |
@@ -138,32 +138,32 @@ mkdir pretrained/3d_checkpoints
 
 The checkpoints of the ⬆️ experiments are available. Save the corresponding `.pth` file to `3d_checkpoint`, then run the scripts as below.
 
-- `Hyper-iNGP` with `SD` on `MG15`. The ckpt in Google Drive
+- `Hyper-iNGP` with `SD` on `MG15`. The ckpt in [Google Drive](https://drive.google.com/file/d/1gjj1QEeu4OR3VATw7g7-zFIJpmg2A5kR/view?usp=sharing)
 
 ```sh
 sh scripts/multi_prompts_benchmark_evaluation/asd_sd_hyper_iNGP_MG15.sh
 ```
 
-- `3DConv-net` with `SD` on `DF415`. The ckpt in Google Drive
+- `3DConv-net` with `SD` on `DF415`. The ckpt in [Google Drive](https://drive.google.com/file/d/1elAPZlYNRRaA4jH9eb5xCJH5VrgofzbJ/view?usp=sharing)
  
 ```sh
 sh scripts/multi_prompts_benchmark_evaluation/asd_sd_3dconv_net_DF415.sh
 ```
 
-- `3DConv-net` with `SD` on `AT2520`. The ckpt in Google Drive
+- `3DConv-net` with `SD` on `AT2520`. The ckpt in [Google Drive](https://drive.google.com/file/d/1hJcdWqr6aB6D5J2ixioRZPsyJn5dmiVp/view?usp=sharing)
 
 ```sh
 sh scripts/multi_prompts_benchmark_evaluation/asd_sd_3dconv_net_AT2520.sh
 ```
 
 
-- `Triplane-Transformer` with `MV` on `DL17k`. The ckpt in Google Drive
+- `Triplane-Transformer` with `MV` on `DL17k`. The ckpt in [Google Drive](https://drive.google.com/file/d/155N80gHsbXTdsRVAc07lGrbzlHpdNMns/view?usp=sharing)
 
 ```sh
 sh scripts/multi_prompts_benchmark_evaluation/asd_mv_triplane_transformer_DL17k.sh
 ```
 
-- `3DConv-net` with `SD` on `CP100k`. The ckpt in Google Drive
+- `3DConv-net` with `SD` on `CP100k`. The ckpt in [Google Drive](https://drive.google.com/file/d/1SGPS6jWFmC9FahdlIk3SZOn2t0JPHHNE/view?usp=sharing)
 
 ```sh
 sh scripts/multi_prompts_benchmark_evaluation/asd_sd_3dconv_net_CP100k.sh
@@ -177,15 +177,31 @@ python evaluation/CLIP/evaluation_amortized.py --result_dir <video_dir>
 
 ## 🕹️ Create Your Own Modules
 
+### 3D Generator
+
+1. Place the code in `custom/amortized/models/geometry`, check out the other code in that directory for reference.
+2. Update your <name_of_file> in `custom/amortized/models/geometry/__init__.py`
+3. Create your own config file, type in your registered module name in the `system.geometry_type` argument, check out the other code in the `configs/multi-prompt_benchmark` directory for reference.
+   
 ### 2D Diffusion Guidance
 
-### 3D Generator
+1. Put your code in `threestudio/models/guidance`, take a look at the other code in that directory or other [guidance](https://github.com/threestudio-project/threestudio/tree/main/threestudio/models/guidance) for reference.
+2. Update your <name_of_file> in  `threestudio/models/guidance/__init__.py`
+3. Create your own config file, type in your registered module name in the `system.guidance_type` argument, take a look at the other code in the `configs/multi-prompt_benchmark` directory for reference.
+
 
 ### Text corpus
 
+1. Create a JSON file that lists the training, validation, and test text prompts in the `load` directory 
+2. Enter the name of this JSON file into the `system.prompt_processor.prompt_library` argument to set up the corpus, take other commands in the `scripts` directory for reference
+
+You can also add your modules for `data`, `renderer`, `prompt_processor`, etc.
+
 ## 🙏 Acknowledgement
 
-- [threestudio](https://github.com/threestudio-project/threestudio), a clean and extensible codebase for text-to-3D
-- [MVDream-threestudio](https://github.com/bytedance/MVDream-threestudio), the implementation of MVDream for text-to-3D
+- [threestudio](https://github.com/threestudio-project/threestudio), a clean and extensible codebase for text-to-3D.
+- [MVDream-threestudio](https://github.com/bytedance/MVDream-threestudio), the implementation of MVDream for text-to-3D.
+- [OpenLRM](https://github.com/3DTopia/OpenLRM), the implementation of [LRM](https://yiconghong.me/LRM/). We develop the 3D generator of Triplane-Transformer on top of it.
+- [Cap3D](https://cap3d-um.github.io/), which provides the text caption of [Objaverse](https://objaverse.allenai.org/). We develop the corpus of CP100k on top of it.
 
 

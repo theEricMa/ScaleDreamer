@@ -179,9 +179,13 @@ python evaluation/CLIP/evaluation_amortized.py --result_dir <video_dir>
 
 ### 2D Diffusion Guidance
 
+
 ### 3D Generator
 
 ### Text corpus
+
+1. Create a JSON file that lists the training, validation, and test text prompts in the `load` directory 
+2. Enter the name of this JSON file into the `system.prompt_processor.prompt_library` argument to set up the corpus.
 
 ## 🙏 Acknowledgement
 

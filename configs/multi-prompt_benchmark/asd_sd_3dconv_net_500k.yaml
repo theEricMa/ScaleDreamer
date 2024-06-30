@@ -1,4 +1,4 @@
-name: "asd_sd_3dconv_net_500k"
+name: "asd_sd_3dconv_net_300k"
 tag: "${rmspace:${system.prompt_processor.prompt_library},_}"
 exp_root_dir: "outputs"
 seed: 0
@@ -86,8 +86,8 @@ system:
     guidance_scale: 7.5
     plus_ratio: 0.1
     plus_random: true
-    min_step_percent: [1, 0.5, 0.02, 500000] # for fair comparison with ours
-    max_step_percent: [1, 0.98, 0.5, 500000] # annealed to 0.5 after 5000 steps
+    min_step_percent: [1, 0.5, 0.02, 300000] # for fair comparison with ours
+    max_step_percent: [1, 0.98, 0.5, 300000] # annealed to 0.5 after 5000 steps
     guidance_perp_neg: -0.5
   loggers:
     wandb:
@@ -99,9 +99,9 @@ system:
     lambda_asd: 1.
     lambda_orient: 0.
     lambda_sparsity: 20
-    lambda_opaque: [400000, 0, 10., 400001] # final 1/5 iterations
+    lambda_opaque: [240000, 0, 10., 300001] # final 1/5 iterations
     lambda_z_variance: 0.
-    lambda_eikonal: [1, 100., 1., 50000] # fisrt 1/10 iterations
+    lambda_eikonal: [1, 100., 1., 30000] # fisrt 1/10 iterations
 
   optimizer:
     name: Adan # for fast convergence
@@ -116,7 +116,7 @@ system:
 
 
 trainer:
-  max_steps: 500000
+  max_steps: 300000
   log_every_n_steps: 1
   num_sanity_val_steps: 0
   val_check_interval: 50000

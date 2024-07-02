@@ -1,9 +1,10 @@
 # ScaleDreamer: Scalable Text-to-3D Synthesis with Asynchronous Score Distillation
 
-Paper | [Project Page](https://sites.google.com/view/scaledreamer-release/)
+### Paper | [Project Page](https://sites.google.com/view/scaledreamer-release/)
 
 ## 🔥 News
 
+- **2024.07.02** ScaleDreamer is accepted by ECCV 2024
 - **2024.06.23** Create this repo.
 
 ## ⚙️ Dependencies and Installation

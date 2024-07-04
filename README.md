@@ -5,7 +5,7 @@
 <h1>ScaleDreamer: Scalable Text-to-3D Synthesis with Asynchronous Score Distillation</h1>
 
 <div>
-    <a href='https://scholar.google.com/citations?user=A-U8zE8AAAAJ&hl=zh-CN' target='_blank'>Zhiyuan Ma</a>&emsp;
+    <a href='https://scholar.google.com/citations?user=F15mLDYAAAAJ&hl=en' target='_blank'>Zhiyuan Ma</a>&emsp;
     <a href='https://scholar.google.com/citations?user=hORhL7YAAAAJ&hl=en' target='_blank'>Yuxiang Wei</a>&emsp;
     <a href='https://scholar.google.com/citations?user=p0GLwtoAAAAJ&hl=en' target='_blank'>Yabin Zhang</a>&emsp;
     <a href='https://scholar.google.com/citations?user=1rbNk5oAAAAJ&hl=zh-CN' target='_blank'>Xiangyu Zhu</a>&emsp;

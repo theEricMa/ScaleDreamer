@@ -1,6 +1,6 @@
 # ScaleDreamer: Scalable Text-to-3D Synthesis with Asynchronous Score Distillation
 
-### Paper | [Project Page](https://sites.google.com/view/scaledreamer-release/)
+### [Paper](https://arxiv.org/pdf/2407.02040) | [Project Page](https://sites.google.com/view/scaledreamer-release/)
 
 ## 🔥 News
 

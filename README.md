@@ -63,7 +63,7 @@ pip install -r requirements.txt
 export PATH="/usr/local/cuda/bin:$PATH"
 export LD_LIBRARY_PATH="/usr/local/cuda/lib64:$LD_LIBRARY_PATH"
 pip install git+https://github.com/NVlabs/tiny-cuda-nn/#subdirectory=bindings/torch
-pip install git+https://github.com/NVlabs/nvdiffrast.git
+pip install git+https://github.com/KAIR-BAIR/nerfacc.git@v0.5.2
 ```
 If you encounter errors while installing iNGP, it is recommended to check your gcc version. Follow these instructions to change the gcc version within your conda environment. Then return to the repository directory to install iNGP and NerfAcc ⬆️ again.
  ```sh

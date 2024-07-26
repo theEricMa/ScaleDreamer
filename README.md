@@ -225,7 +225,7 @@ If you find this paper helpful, please cite
 @article{ma2024scaledreamer,
   title={ScaleDreamer: Scalable Text-to-3D Synthesis with Asynchronous Score Distillation},
   author={Ma, Zhiyuan and Wei, Yuxiang and Zhang, Yabin and Zhu, Xiangyu and Lei, Zhen and Zhang, Lei},
-  booktitle={European Conference on Computer Vision},
+  journal={arXiv preprint arXiv:2407.02040},
   year={2024}
 }
 ```

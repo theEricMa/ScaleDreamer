@@ -222,11 +222,13 @@ You can also add your modules for `data`, `renderer`, `prompt_processor`, etc.
 If you find this paper helpful, please cite
 
 ```
-@article{ma2024scaledreamer,
-  title={ScaleDreamer: Scalable Text-to-3D Synthesis with Asynchronous Score Distillation},
+@inproceedings{ma2024scaledreamer,
+  title={Scaledreamer: Scalable text-to-3d synthesis with asynchronous score distillation},
   author={Ma, Zhiyuan and Wei, Yuxiang and Zhang, Yabin and Zhu, Xiangyu and Lei, Zhen and Zhang, Lei},
-  journal={arXiv preprint arXiv:2407.02040},
-  year={2024}
+  booktitle={European Conference on Computer Vision},
+  pages={1--19},
+  year={2024},
+  organization={Springer}
 }
 ```
 
